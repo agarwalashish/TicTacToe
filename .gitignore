@@ -1,4 +1,6 @@
 .metadata/
 RemoteSystemsTempFiles/
 TicTacToeClient/.settings/
+TicTacToeClient/bin/
 TicTacToeServer/.settings/
+TicTacToeServer/bin/
