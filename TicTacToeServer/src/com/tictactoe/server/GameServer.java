@@ -40,7 +40,8 @@ public class GameServer {
 		{
 			String input = inputFromClient.readLine();
 			System.out.println("Message recieved by server is: " + input);
-			outputToClient.print("Hello from Server");
+			outputToClient.write("Hello from Server \n");
+			outputToClient.flush();
 		}
 		catch(Exception e)
 		{

@@ -17,9 +17,9 @@ public class GameClient {
 		try
 		{
 			System.out.println("Client starting");
-			socket = new Socket(hostName, portNumber);
+			socket = new Socket("localhost", portNumber);
 			outputToServer = new PrintWriter(socket.getOutputStream(), true);
-			inputFromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			inputFromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));			
 			System.out.println("Going to create a handshake");
 			clientHandshake();
 		}
@@ -27,14 +27,14 @@ public class GameClient {
 		{
 			
 		}
-		
 	}
 	
 	static boolean clientHandshake()
 	{
 		try
 		{
-			outputToServer.print("Hey, this is a client");
+			outputToServer.write("Hey, this is a client \n");
+			outputToServer.flush();
 			System.out.println("Sent a message to the server");
 			
 			String input = inputFromServer.readLine();
@@ -47,7 +47,5 @@ public class GameClient {
 		
 		return true;
 	}
-	
-	
 
 }
