@@ -1,13 +1,13 @@
-package com.tictactoe.game;
+package com.tictactoe.game.server;
 
-public class Game {
+public class GameServer {
 	public static final char MOVE_X = 'X';
 	public static final char MOVE_O = 'O';
 	
 	private char currentPlay;
 	private GameBoard board;
 	
-	public Game() {
+	public GameServer() {
 		board = new GameBoard();
 		currentPlay = MOVE_X;
 	}
@@ -22,6 +22,7 @@ public class Game {
 	}
 	
 	private boolean isMoveValid(int i, char c) {
+		// TODO: Split these two checks and return specific error messages in case of invalid moves.
 		return (currentPlay == c && board.isCellEmpty(i));
 	}
 	

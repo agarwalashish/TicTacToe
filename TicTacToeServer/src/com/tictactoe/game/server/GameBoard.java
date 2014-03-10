@@ -1,4 +1,4 @@
-package com.tictactoe.game;
+package com.tictactoe.game.server;
 
 public class GameBoard {
 	private char[] cells;
