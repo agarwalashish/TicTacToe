@@ -1,13 +1,13 @@
 package com.tictactoe.game.server;
 
-public class GameServer {
+public class ServerGameState {
 	public static final char MOVE_X = 'X';
 	public static final char MOVE_O = 'O';
 	
 	private char currentPlay;
 	private GameBoard board;
 	
-	public GameServer() {
+	public ServerGameState() {
 		board = new GameBoard();
 		currentPlay = MOVE_X;
 	}
