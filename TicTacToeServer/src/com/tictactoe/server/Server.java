@@ -4,7 +4,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.*;
 
-public class GameServer {
+public class Server {
 	
 	static String hostName = "localhost";
 	static int portNumber = 4444;
@@ -19,13 +19,11 @@ public class GameServer {
 		try
 		{
 			serverSocket = new ServerSocket(portNumber);
-			System.out.println("Server socket created. Waiting for connection...");
 			clientSocket = serverSocket.accept();
 			
 			outputToClient = new PrintWriter(clientSocket.getOutputStream(), true);
 			inputFromClient = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-			System.out.println("Server waiting for handshake initiantion");
 			serverHandshake();
 		}
 		catch (Exception e)
@@ -40,7 +38,7 @@ public class GameServer {
 		{
 			String input = inputFromClient.readLine();
 			System.out.println("Message recieved by server is: " + input);
-			outputToClient.write("Hello from Server \n");
+			outputToClient.print("Hello from Server \n");
 			outputToClient.flush();
 		}
 		catch(Exception e)
